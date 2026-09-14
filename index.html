@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mathematical Foundations for Computing - BCA Notes</title>
+
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.7;
+        margin:0;
+        background:#f4f7fb;
+        color:#222;
+    }
+
+    header{
+        background:linear-gradient(135deg,#16213e,#0f3460);
+        color:white;
+        padding:45px 20px;
+        text-align:center;
+    }
+
+    header h1{
+        margin:0;
+        font-size:38px;
+    }
+
+    header p{
+        font-size:18px;
+        opacity:.9;
+    }
+
+    .container{
+        max-width:1100px;
+        margin:auto;
+        padding:25px;
+    }
+
+    .toc{
+        background:white;
+        padding:25px;
+        border-radius:12px;
+        box-shadow:0 3px 12px rgba(0,0,0,.08);
+        margin-bottom:30px;
+    }
+
+    .toc a{
+        text-decoration:none;
+        display:block;
+        padding:7px;
+    }
+
+    section{
+        background:white;
+        padding:30px;
+        margin:25px 0;
+        border-radius:14px;
+        box-shadow:0 3px 12px rgba(0,0,0,.08);
+    }
+
+    h2{
+        color:#0f3460;
+        border-bottom:3px solid #0f3460;
+        padding-bottom:8px;
+    }
+
+    h3{
+        color:#16213e;
+        margin-top:28px;
+    }
+
+    h4{
+        color:#533483;
+    }
+
+    .definition{
+        background:#eef5ff;
+        border-left:5px solid #0f3460;
+        padding:15px;
+        margin:15px 0;
+        border-radius:6px;
+    }
+
+    .example{
+        background:#f1fff4;
+        border-left:5px solid #27ae60;
+        padding:15px;
+        margin:15px 0;
+        border-radius:6px;
+    }
+
+    .warning{
+        background:#fff5e6;
+        border-left:5px solid #f39c12;
+        padding:15px;
+        margin:15px 0;
+        border-radius:6px;
+    }
+
+    .important{
+        background:#fff0f0;
+        border-left:5px solid #e74c3c;
+        padding:15px;
+        margin:15px 0;
+        border-radius:6px;
+    }
+
+    code{
+        background:#eee;
+        padding:3px 6px;
+        border-radius:4px;
+    }
+
+    pre{
+        background:#1e1e1e;
+        color:#eee;
+        padding:18px;
+        overflow:auto;
+        border-radius:8px;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+        margin:20px 0;
+    }
+
+    th,td{
+        border:1px solid #ccc;
+        padding:10px;
+        text-align:left;
+    }
+
+    th{
+        background:#16213e;
+        color:white;
+    }
+
+    .formula{
+        background:#f7f0ff;
+        padding:15px;
+        text-align:center;
+        font-size:20px;
+        border-radius:8px;
+        margin:15px 0;
+    }
+
+    .badge{
+        display:inline-block;
+        background:#0f3460;
+        color:white;
+        padding:5px 10px;
+        border-radius:20px;
+        font-size:13px;
+    }
+
+    footer{
+        background:#16213e;
+        color:white;
+        text-align:center;
+        padding:30px;
+        margin-top:30px;
+    }
+
+    li{
+        margin:7px 0;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mathematical Foundations for Computing</h1>
+    <p>BCA Students ke liye Complete Hinglish Notes</p>
+    <p>Sets • Functions • Graphs • Mathematical Modelling • Sequences • Series • Computing Applications</p>
+</header>
+
+<div class="container">
+
+<!-- TABLE OF CONTENTS -->
+
+<div class="toc">
+    <h2>📚 Table of Contents</h2>
+
+    <a href="#sets">1. Sets and Set Operations</a>
+    <a href="#functions">2. Functions</a>
+    <a href="#graphs">3. Graphs</a>
+    <a href="#modelling">4. Mathematical Modelling</a>
+    <a href="#sequences">5. Sequences</a>
+    <a href="#series">6. Series</a>
+    <a href="#computing">7. Applications in Computing</a>
+    <a href="#revision">8. Quick Revision</a>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SETS -->
+<!-- ===================================================== -->
+
+<section id="sets">
+
+<h2>1. Sets and Set Operations</h2>
+
+<h3>1.1 Set kya hota hai?</h3>
+
+<div class="definition">
+    <b>Set</b> ek well-defined collection of distinct objects ka group hota hai.
+</div>
+
+<p>
+Simple language mein:
+agar hum kuch objects/items ko ek group mein rakhte hain aur clearly pata hai
+ki kaunsa object group ka member hai aur kaunsa nahi, to us group ko
+<b>Set</b> kehte hain.
+</p>
+
+<div class="example">
+<b>Example:</b>
+
+<p>
+A = {1, 2, 3, 4, 5}
+</p>
+
+<p>
+Yeh ek set hai jisme 1,2,3,4,5 elements hain.
+</p>
+</div>
+
+<h3>1.2 Elements</h3>
+
+<p>
+Set ke andar jo individual objects hote hain unhe <b>elements</b> kehte hain.
+</p>
+
+<p>
+A = {10, 20, 30}
+</p>
+
+<p>
+Yahan 10, 20 aur 30 elements hain.
+</p>
+
+<p>
+Notation:
+</p>
+
+<ul>
+<li>10 ∈ A → 10 set A ka element hai.</li>
+<li>50 ∉ A → 50 set A ka element nahi hai.</li>
+</ul>
+
+
+<h3>1.3 Set ko represent kaise karte hain?</h3>
+
+<h4>Method 1: Roster / Listing Method</h4>
+
+<p>
+Saare elements directly likh dete hain.
+</p>
+
+<div class="example">
+A = {2, 4, 6, 8, 10}
+</div>
+
+<h4>Method 2: Set Builder Method</h4>
+
+<p>
+Elements ki property batate hain.
+</p>
+
+<div class="example">
+A = {x | x is an even number and x ≤ 10}
+</div>
+
+<p>
+Iska meaning hai:
+"Saare x jinke liye x even hai aur 10 se chhota ya equal hai."
+</p>
+
+
+<h3>1.4 Important Types of Sets</h3>
+
+<table>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>Empty Set</td>
+<td>Jisme koi element nahi</td>
+<td>∅</td>
+</tr>
+
+<tr>
+<td>Singleton Set</td>
+<td>Sirf ek element</td>
+<td>{5}</td>
+</tr>
+
+<tr>
+<td>Finite Set</td>
+<td>Limited elements</td>
+<td>{1,2,3}</td>
+</tr>
+
+<tr>
+<td>Infinite Set</td>
+<td>Unlimited elements</td>
+<td>{1,2,3,4,...}</td>
+</tr>
+
+<tr>
+<td>Universal Set</td>
+<td>Problem ke saare possible elements</td>
+<td>U</td>
+</tr>
+
+</table>
+
+
+<h3>1.5 Cardinality</h3>
+
+<p>
+Set mein total kitne elements hain, usko <b>cardinality</b> kehte hain.
+</p>
+
+<div class="example">
+A = {2,4,6,8}
+<br><br>
+|A| = 4
+</div>
+
+
+<h3>1.6 Subset</h3>
+
+<div class="definition">
+A agar B ke saare elements contain karta hai, to A ko B ka subset kehte hain.
+</div>
+
+<p>
+Notation:
+</p>
+
+<div class="formula">
+A ⊆ B
+</div>
+
+<div class="example">
+
+<p>
+A = {1,2}</p>
+
+<p>
+B = {1,2,3,4}</p>
+
+<p>
+A ke saare elements B ke andar hain.
+</p>
+
+<p>
+Therefore:
+</p>
+
+<p><b>A ⊆ B</b></p>
+
+</div>
+
+
+<h3>1.7 Proper Subset</h3>
+
+<p>
+A subset hai B ka aur A ≠ B, to A proper subset hai.
+</p>
+
+<div class="formula">
+A ⊂ B
+</div>
+
+
+<h3>1.8 Union</h3>
+
+<div class="definition">
+Union ka matlab: dono sets ke saare unique elements ko combine karna.
+</div>
+
+<div class="formula">
+A ∪ B
+</div>
+
+<div class="example">
+
+A = {1,2,3}
+
+<br>
+
+B = {3,4,5}
+
+<br><br>
+
+A ∪ B = {1,2,3,4,5}
+
+</div>
+
+<p>
+Notice karo 3 ko do baar nahi likha because set mein duplicate elements nahi hote.
+</p>
+
+
+<h3>1.9 Intersection</h3>
+
+<div class="definition">
+Intersection mein sirf common elements aate hain.
+</div>
+
+<div class="formula">
+A ∩ B
+</div>
+
+<div class="example">
+
+A = {1,2,3}
+
+<br>
+
+B = {3,4,5}
+
+<br><br>
+
+A ∩ B = {3}
+
+</div>
+
+
+<h3>1.10 Difference</h3>
+
+<p>
+A - B ka matlab:
+A ke elements jo B mein nahi hain.
+</p>
+
+<div class="example">
+
+A = {1,2,3,4}
+
+<br>
+
+B = {3,4,5,6}
+
+<br><br>
+
+A - B = {1,2}
+
+</div>
+
+
+<h3>1.11 Complement</h3>
+
+<p>
+Universal set U ke andar jo elements A mein nahi hain,
+woh A ka complement hain.
+</p>
+
+<div class="formula">
+A' = U - A
+</div>
+
+<div class="example">
+
+U = {1,2,3,4,5}
+
+<br>
+
+A = {1,2}
+
+<br><br>
+
+A' = {3,4,5}
+
+</div>
+
+
+<h3>1.12 Power Set</h3>
+
+<div class="definition">
+Power set kisi set ke saare possible subsets ka set hota hai.
+</div>
+
+<div class="example">
+
+A = {1,2}
+
+<br><br>
+
+P(A) = {∅, {1}, {2}, {1,2}}
+
+<br><br>
+
+Total subsets = 2<sup>n</sup>
+
+</div>
+
+<p>
+Agar set mein n elements hain to total subsets:
+</p>
+
+<div class="formula">
+Number of subsets = 2<sup>n</sup>
+</div>
+
+<p>
+Example:
+A mein 3 elements hain.
+</p>
+
+<p>
+2<sup>3</sup> = 8 subsets.
+</p>
+
+
+<h3>1.13 Cartesian Product</h3>
+
+<div class="definition">
+Do sets ke elements ke ordered pairs banane ko Cartesian Product kehte hain.
+</div>
+
+<div class="formula">
+A × B = {(a,b) | a ∈ A and b ∈ B}
+</div>
+
+<div class="example">
+
+A = {1,2}
+
+<br>
+
+B = {a,b}
+
+<br><br>
+
+A × B =
+{(1,a),(1,b),(2,a),(2,b)}
+
+</div>
+
+<p>
+Agar |A| = m aur |B| = n:
+</p>
+
+<div class="formula">
+|A × B| = m × n
+</div>
+
+
+<h3>1.14 Computing mein Sets ka use</h3>
+
+<ul>
+<li>Database mein records ko group karna</li>
+<li>Programming mein collections</li>
+<li>Search results</li>
+<li>Database queries</li>
+<li>AI aur Machine Learning mein data categories</li>
+<li>Probability</li>
+<li>Logic</li>
+<li>Compiler design</li>
+<li>Network users/devices ko represent karna</li>
+</ul>
+
+<div class="example">
+
+<b>Real Computing Example:</b>
+
+<p>
+Suppose ek college mein:
+</p>
+
+<p>
+Java students = {A, B, C, D}
+</p>
+
+<p>
+Python students = {C, D, E, F}
+</p>
+
+<p>
+Java ∩ Python = {C,D}
+</p>
+
+<p>
+Matlab C aur D dono Java aur Python padh rahe hain.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FUNCTIONS -->
+<!-- ===================================================== -->
+
+<section id="functions">
+
+<h2>2. Functions</h2>
+
+<h3>2.1 Function kya hota hai?</h3>
+
+<div class="definition">
+Function ek rule/mapping hai jo har input ko exactly ek output se associate karta hai.
+</div>
+
+<p>
+Simple language:
+</p>
+
+<p>
+<b>Input → Function → Output</b>
+</p>
+
+<div class="example">
+
+Agar:
+
+f(x) = 2x + 3
+
+<br><br>
+
+Input x = 5
+
+<br>
+
+f(5) = 2(5) + 3
+
+<br>
+
+f(5) = 13
+
+</div>
+
+
+<h3>2.2 Function ka basic structure</h3>
+
+<div class="formula">
+f : A → B
+</div>
+
+<p>
+Iska matlab:
+Function f set A ke elements ko set B ke elements mein map karta hai.
+</p>
+
+<p>
+A = Domain</p>
+<p>
+B = Codomain</p>
+
+
+<h3>2.3 Domain</h3>
+
+<div class="definition">
+Function ko diye ja sakne wale valid inputs ka set Domain hota hai.
+</div>
+
+<div class="example">
+
+f(x) = x + 5
+
+<br><br>
+
+Agar x koi bhi real number ho sakta hai,
+to domain = all real numbers.
+
+</div>
+
+
+<h3>2.4 Codomain</h3>
+
+<p>
+Possible outputs ka declared set codomain hota hai.
+</p>
+
+
+<h3>2.5 Range</h3>
+
+<div class="definition">
+Actually function se jo outputs generate hote hain, unka set Range kehlata hai.
+</div>
+
+<div class="example">
+
+f(x) = x²
+
+<br><br>
+
+Domain = Real numbers
+
+<br>
+
+Outputs = 0,1,4,9,...
+
+<br><br>
+
+Range = y ≥ 0
+
+</div>
+
+
+<h3>2.6 One-to-One Function</h3>
+
+<div class="definition">
+Different inputs ke outputs bhi different hon, to function one-to-one hai.
+</div>
+
+<div class="example">
+
+f(x) = 2x
+
+<br><br>
+
+f(1)=2
+
+<br>
+f(2)=4
+
+<br>
+f(3)=6
+
+<br><br>
+
+Har input ka unique output hai.
+
+</div>
+
+
+<h3>2.7 Many-to-One Function</h3>
+
+<div class="example">
+
+f(x)=x²
+
+<br><br>
+
+f(2)=4
+
+<br>
+f(-2)=4
+
+<br><br>
+
+Different inputs ka same output.
+
+</div>
+
+
+<h3>2.8 Onto Function</h3>
+
+<p>
+Agar codomain ka har element kisi na kisi input se map ho raha hai,
+to function onto hai.
+</p>
+
+
+<h3>2.9 Into Function</h3>
+
+<p>
+Agar codomain ke kuch elements unused reh jaate hain,
+to function into hai.
+</p>
+
+
+<h3>2.10 Bijective Function</h3>
+
+<div class="definition">
+Jo function both one-to-one aur onto ho, use bijective function kehte hain.
+</div>
+
+<p>
+Bijective function ka special benefit:
+</p>
+
+<div class="important">
+Bijective function ka inverse function exist karta hai.
+</div>
+
+
+<h3>2.11 Computing mein Functions</h3>
+
+<p>
+Programming mein function ka concept bahut important hai.
+</p>
+
+<pre>
+function add(a, b):
+    return a + b
+</pre>
+
+<p>
+Yahan:
+</p>
+
+<ul>
+<li>a,b = inputs</li>
+<li>add() = function</li>
+<li>a+b = output</li>
+</ul>
+
+<div class="example">
+
+<b>Mathematics:</b>
+
+<br>
+
+f(x) = x²
+
+<br><br>
+
+<b>Programming:</b>
+
+<pre>
+square(x):
+    return x*x
+</pre>
+
+<p>
+Concept same hai:
+input → operation → output
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- GRAPHS -->
+<!-- ===================================================== -->
+
+<section id="graphs">
+
+<h2>3. Graphs</h2>
+
+<h3>3.1 Graph kya hota hai?</h3>
+
+<div class="definition">
+Graph vertices (nodes) aur edges (connections) ka structure hota hai.
+</div>
+
+<p>
+Graph ko generally:
+</p>
+
+<div class="formula">
+G = (V,E)
+</div>
+
+<p>
+se represent karte hain.
+</p>
+
+<ul>
+<li>V = Vertices / Nodes</li>
+<li>E = Edges / Connections</li>
+</ul>
+
+
+<h3>3.2 Real-life Example</h3>
+
+<p>
+Suppose 4 cities hain:
+</p>
+
+<p>
+A, B, C, D
+</p>
+
+<p>
+Aur roads:
+</p>
+
+<ul>
+<li>A-B</li>
+<li>B-C</li>
+<li>C-D</li>
+<li>A-D</li>
+</ul>
+
+<p>
+Cities = vertices</p>
+<p>
+Roads = edges</p>
+
+
+<h3>3.3 Undirected Graph</h3>
+
+<div class="definition">
+Edge ki direction nahi hoti.
+</div>
+
+<p>
+A — B
+</p>
+
+<p>
+Matlab A se B aur B se A connection same hai.
+</p>
+
+
+<h3>3.4 Directed Graph</h3>
+
+<div class="definition">
+Edges ki direction hoti hai.
+</div>
+
+<p>
+A → B
+</p>
+
+<p>
+Matlab A se B connection hai, zaroori nahi B se A bhi ho.
+</p>
+
+
+<h3>3.5 Weighted Graph</h3>
+
+<p>
+Edges ke saath weight/cost/distance diya hota hai.
+</p>
+
+<div class="example">
+
+A ---- 10 ---- B
+
+<br><br>
+
+10 distance/cost/time represent kar sakta hai.
+
+</div>
+
+
+<h3>3.6 Degree of Vertex</h3>
+
+<p>
+Kisi vertex se connected edges ki count ko degree kehte hain.
+</p>
+
+<div class="example">
+
+A ke saath 3 edges connected hain.
+
+<br><br>
+
+Degree(A) = 3
+
+</div>
+
+
+<h3>3.7 Path</h3>
+
+<p>
+Graph mein ek vertex se doosre vertex tak jaane ka route path hota hai.
+</p>
+
+<p>
+A → B → C → D
+</p>
+
+
+<h3>3.8 Cycle</h3>
+
+<p>
+Aisa path jo start vertex par wapas aa jaye, cycle kehlata hai.
+</p>
+
+<p>
+A → B → C → A
+</p>
+
+
+<h3>3.9 Tree</h3>
+
+<div class="definition">
+Tree ek connected graph hota hai jisme cycle nahi hoti.
+</div>
+
+<p>
+Agar tree mein n vertices hain:
+</p>
+
+<div class="formula">
+Number of edges = n - 1
+</div>
+
+
+<h3>3.10 Graphs in Computing</h3>
+
+<ul>
+<li>Google Maps</li>
+<li>Social networks</li>
+<li>Computer networks</li>
+<li>Internet routing</li>
+<li>Operating systems</li>
+<li>Compiler design</li>
+<li>Artificial Intelligence</li>
+<li>Recommendation systems</li>
+<li>Web page linking</li>
+</ul>
+
+<div class="example">
+
+<b>Facebook/Instagram type example:</b>
+
+<p>
+Person = Node
+</p>
+
+<p>
+Friendship/Follow relationship = Edge
+</p>
+
+<p>
+Isliye social network ko graph ki tarah represent kar sakte hain.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- MATHEMATICAL MODELLING -->
+<!-- ===================================================== -->
+
+<section id="modelling">
+
+<h2>4. Mathematical Modelling</h2>
+
+<h3>4.1 Mathematical Modelling kya hai?</h3>
+
+<div class="definition">
+Real-world problem ko mathematical equations, functions, graphs ya formulas ke form mein represent karna mathematical modelling hai.
+</div>
+
+<p>
+Simple flow:
+</p>
+
+<div class="formula">
+Real World Problem → Mathematical Model → Calculation → Result → Real World Decision
+</div>
+
+
+<h3>4.2 Example: Mobile Data Usage</h3>
+
+<p>
+Suppose ek student daily 2 GB data use karta hai.
+</p>
+
+<p>
+To n days ke liye data usage:
+</p>
+
+<div class="formula">
+D(n) = 2n
+</div>
+
+<p>
+Agar 7 days hain:
+</p>
+
+<div class="formula">
+D(7) = 2 × 7 = 14 GB
+</div>
+
+
+<h3>4.3 Modelling ke Steps</h3>
+
+<ol>
+<li>Problem ko understand karo.</li>
+<li>Important variables identify karo.</li>
+<li>Assumptions banao.</li>
+<li>Mathematical equation/model banao.</li>
+<li>Model ko solve karo.</li>
+<li>Result ko real-world situation se compare karo.</li>
+<li>Zarurat ho to model improve karo.</li>
+</ol>
+
+
+<h3>4.4 Variables</h3>
+
+<p>
+Variable ek quantity hai jiska value change ho sakta hai.
+</p>
+
+<div class="example">
+
+Suppose:
+
+<br><br>
+
+x = number of students
+
+<br>
+
+y = total books
+
+<br><br>
+
+Agar har student ko 3 books chahiye:
+
+<br>
+
+y = 3x
+
+</div>
+
+
+<h3>4.5 Computing Example: Algorithm Time</h3>
+
+<p>
+Suppose ek algorithm n items ko check karta hai aur har item ko ek baar process karta hai.
+</p>
+
+<p>
+Approximate operations:
+</p>
+
+<div class="formula">
+T(n) = n
+</div>
+
+<p>
+Isko computer science mein:
+</p>
+
+<div class="formula">
+O(n)
+</div>
+
+<p>
+kehte hain.
+</p>
+
+<p>
+Agar n double hota hai, approximately operations bhi double ho jaate hain.
+</p>
+
+
+<h3>4.6 Example: Binary Search</h3>
+
+<p>
+Binary search mein sorted data ko repeatedly half kiya jaata hai.
+</p>
+
+<p>
+Number of steps approximately:
+</p>
+
+<div class="formula">
+log₂(n)
+</div>
+
+<p>
+For example:
+</p>
+
+<div class="example">
+
+n = 1024
+
+<br><br>
+
+log₂(1024) = 10
+
+<br><br>
+
+Matlab approximately 10 divisions mein search complete ho sakti hai.
+
+</div>
+
+
+<h3>4.7 Mathematical Modelling ka importance</h3>
+
+<ul>
+<li>Future prediction</li>
+<li>Algorithm analysis</li>
+<li>Performance prediction</li>
+<li>Business decisions</li>
+<li>Weather prediction</li>
+<li>Population modelling</li>
+<li>Computer simulations</li>
+<li>Machine learning</li>
+<li>Network traffic prediction</li>
+</ul>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SEQUENCES -->
+<!-- ===================================================== -->
+
+<section id="sequences">
+
+<h2>5. Sequences</h2>
+
+<h3>5.1 Sequence kya hoti hai?</h3>
+
+<div class="definition">
+Numbers ka ek ordered list sequence kehlata hai.
+</div>
+
+<div class="example">
+
+2, 4, 6, 8, 10, ...
+
+</div>
+
+<p>
+Order important hai.
+</p>
+
+
+<h3>5.2 Sequence notation</h3>
+
+<p>
+Sequence ko generally:
+</p>
+
+<div class="formula">
+a₁, a₂, a₃, a₄, ...
+</div>
+
+<p>
+likhte hain.
+</p>
+
+<p>
+a₁ = first term</p>
+<p>
+a₂ = second term</p>
+<p>
+aₙ = nth term</p>
+
+
+<h3>5.3 Arithmetic Sequence</h3>
+
+<div class="definition">
+Jisme consecutive terms ka difference same hota hai, woh Arithmetic Sequence hai.
+</div>
+
+<div class="example">
+
+2, 5, 8, 11, 14, ...
+
+<br><br>
+
+Difference:
+
+5-2 = 3
+
+<br>
+
+8-5 = 3
+
+<br>
+
+11-8 = 3
+
+</div>
+
+<p>
+Common difference = d
+</p>
+
+<h4>Formula</h4>
+
+<div class="formula">
+aₙ = a₁ + (n-1)d
+</div>
+
+
+<h3>5.4 Arithmetic Sequence Example</h3>
+
+<p>
+Sequence:
+</p>
+
+<p>
+3, 7, 11, 15, ...
+</p>
+
+<p>
+Here:
+</p>
+
+<ul>
+<li>a₁ = 3</li>
+<li>d = 4</li>
+</ul>
+
+<p>
+Find 10th term:
+</p>
+
+<div class="formula">
+a₁₀ = 3 + (10-1)(4)
+</div>
+
+<div class="formula">
+a₁₀ = 3 + 36 = 39
+</div>
+
+
+<h3>5.5 Geometric Sequence</h3>
+
+<div class="definition">
+Jisme consecutive terms ka ratio same hota hai, woh Geometric Sequence hai.
+</div>
+
+<div class="example">
+
+2, 6, 18, 54, ...
+
+<br><br>
+
+6/2 = 3
+
+<br>
+
+18/6 = 3
+
+<br>
+
+54/18 = 3
+
+<br><br>
+
+Common ratio = 3
+
+</div>
+
+<h4>Formula</h4>
+
+<div class="formula">
+aₙ = a₁ × r<sup>n-1</sup>
+</div>
+
+
+<h3>5.6 Geometric Sequence Example</h3>
+
+<p>
+2, 4, 8, 16, ...
+</p>
+
+<p>
+a₁ = 2</p>
+<p>
+r = 2</p>
+
+<p>
+5th term:
+</p>
+
+<div class="formula">
+a₅ = 2 × 2<sup>4</sup>
+</div>
+
+<div class="formula">
+a₅ = 32
+</div>
+
+
+<h3>5.7 Fibonacci Sequence</h3>
+
+<div class="definition">
+Fibonacci sequence mein next term previous two terms ka sum hota hai.
+</div>
+
+<div class="example">
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+
+</div>
+
+<p>
+Rule:
+</p>
+
+<div class="formula">
+F(n) = F(n-1) + F(n-2)
+</div>
+
+
+<h3>5.8 Computing mein Fibonacci</h3>
+
+<p>
+Fibonacci recursion samajhne ke liye famous example hai.
+</p>
+
+<pre>
+fib(n):
+    if n <= 1:
+        return n
+
+    return fib(n-1) + fib(n-2)
+</pre>
+
+<p>
+Isse recursion aur algorithm complexity samajhne mein help milti hai.
+</p>
+
+
+<h3>5.9 Sequences in Computing</h3>
+
+<ul>
+<li>Memory addresses</li>
+<li>Time-series data</li>
+<li>Algorithm analysis</li>
+<li>Recursion</li>
+<li>Cryptography</li>
+<li>Data generation</li>
+<li>Signal processing</li>
+<li>Hashing</li>
+</ul>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SERIES -->
+<!-- ===================================================== -->
+
+<section id="series">
+
+<h2>6. Series</h2>
+
+<h3>6.1 Series kya hoti hai?</h3>
+
+<div class="definition">
+Sequence ke terms ko add karne par Series milti hai.
+</div>
+
+<div class="example">
+
+Sequence:
+
+1, 2, 3, 4, 5
+
+<br><br>
+
+Series:
+
+1 + 2 + 3 + 4 + 5
+
+</div>
+
+
+<h3>6.2 Arithmetic Series</h3>
+
+<p>
+Arithmetic sequence ke terms ka sum Arithmetic Series hota hai.
+</p>
+
+<h4>Formula</h4>
+
+<div class="formula">
+Sₙ = n/2 × [2a + (n-1)d]
+</div>
+
+<p>
+Alternative formula:
+</p>
+
+<div class="formula">
+Sₙ = n/2 × (a + l)
+</div>
+
+<p>
+where:</p>
+
+<ul>
+<li>a = first term</li>
+<li>l = last term</li>
+<li>n = number of terms</li>
+</ul>
+
+
+<h3>6.3 Example</h3>
+
+<p>
+Find sum:
+</p>
+
+<p>
+2 + 4 + 6 + 8 + 10
+</p>
+
+<p>
+Here:</p>
+
+<ul>
+<li>a = 2</li>
+<li>l = 10</li>
+<li>n = 5</li>
+</ul>
+
+<div class="formula">
+S = 5/2 × (2+10)
+</div>
+
+<div class="formula">
+S = 30
+</div>
+
+
+<h3>6.4 Geometric Series</h3>
+
+<p>
+Geometric sequence ke terms ko add karne par Geometric Series milti hai.
+</p>
+
+<div class="example">
+
+2 + 4 + 8 + 16 + ...
+
+</div>
+
+
+<h4>Finite Geometric Series Formula</h4>
+
+<div class="formula">
+Sₙ = a(r<sup>n</sup>-1)/(r-1)
+</div>
+
+<p>
+Equivalent form:
+</p>
+
+<div class="formula">
+Sₙ = a(1-r<sup>n</sup>)/(1-r)
+</div>
+
+
+<h3>6.5 Infinite Geometric Series</h3>
+
+<p>
+Agar |r| &lt; 1 ho, to infinite geometric series ka sum finite value par approach karta hai.
+</p>
+
+<div class="formula">
+S∞ = a/(1-r)
+</div>
+
+<div class="example">
+
+1 + 1/2 + 1/4 + 1/8 + ...
+
+<br><br>
+
+a = 1
+
+<br>
+
+r = 1/2
+
+<br><br>
+
+S∞ = 1/(1-1/2)
+
+<br>
+
+S∞ = 2
+
+</div>
+
+
+<h3>6.6 Series ka Computing mein use</h3>
+
+<ul>
+<li>Algorithm complexity</li>
+<li>Probability calculations</li>
+<li>Approximation algorithms</li>
+<li>Numerical methods</li>
+<li>Signal processing</li>
+<li>Computer graphics</li>
+<li>Machine learning</li>
+</ul>
+
+
+<h3>6.7 Algorithm Example</h3>
+
+<p>
+Suppose nested operations ki count approximately:
+</p>
+
+<div class="formula">
+1 + 2 + 3 + ... + n
+</div>
+
+<p>
+Iska sum:
+</p>
+
+<div class="formula">
+n(n+1)/2
+</div>
+
+<p>
+Ye approximately:
+</p>
+
+<div class="formula">
+O(n²)
+</div>
+
+<p>
+ko explain karne mein help karta hai.
+</p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- APPLICATIONS -->
+<!-- ===================================================== -->
+
+<section id="computing">
+
+<h2>7. Applications in Computing</h2>
+
+<p>
+Ab sab concepts ko computer science se connect karte hain.
+</p>
+
+
+<h3>7.1 Sets → Databases</h3>
+
+<p>
+Database mein different categories ko sets ke form mein samajh sakte hain.
+</p>
+
+<div class="example">
+
+Students who know Java:
+
+A = {Rahul, Aman, Priya}
+
+<br><br>
+
+Students who know Python:
+
+B = {Priya, Aman, Neha}
+
+<br><br>
+
+A ∩ B = {Rahul?}
+
+</div>
+
+<p>
+Actually correct intersection:
+</p>
+
+<div class="formula">
+A ∩ B = {Aman, Priya}
+</div>
+
+<p>
+Matlab Aman aur Priya dono Java aur Python jaante hain.
+</p>
+
+
+<h3>7.2 Sets → SQL</h3>
+
+<p>
+Database operations ka set theory se strong connection hai.
+</p>
+
+<ul>
+<li>UNION → UNION</li>
+<li>Common records → INTERSECTION concept</li>
+<li>Difference → EXCEPT / MINUS concept</li>
+</ul>
+
+
+<h3>7.3 Functions → Programming</h3>
+
+<p>
+Programming function basically mathematical function ke concept se related hai.
+</p>
+
+<pre>
+def multiply(a, b):
+    return a * b
+</pre>
+
+<p>
+Input:
+</p>
+
+<p>
+a=5, b=4
+</p>
+
+<p>
+Output:
+</p>
+
+<p>
+20
+</p>
+
+
+<h3>7.4 Functions → Machine Learning</h3>
+
+<p>
+Machine learning mein model input data ko output/prediction mein map karta hai.
+</p>
+
+<div class="formula">
+Input → Model Function → Prediction
+</div>
+
+<p>
+Example:
+</p>
+
+<div class="example">
+
+Input:
+
+House size = 1200 sq ft
+
+<br><br>
+
+Function/model:
+
+Price = f(size)
+
+<br><br>
+
+Output:
+
+Predicted house price
+
+</div>
+
+
+<h3>7.5 Graphs → Computer Networks</h3>
+
+<p>
+Computer network ko graph ke form mein represent kar sakte hain.
+</p>
+
+<ul>
+<li>Computer/Router = Node</li>
+<li>Network connection = Edge</li>
+</ul>
+
+
+<h3>7.6 Graphs → Google Maps</h3>
+
+<p>
+Map ko graph ki tarah imagine karo.
+</p>
+
+<ul>
+<li>Location = Vertex</li>
+<li>Road = Edge</li>
+<li>Distance = Weight</li>
+</ul>
+
+<p>
+Shortest path algorithms jaise Dijkstra ka use karke shortest route find kiya ja sakta hai.
+</p>
+
+
+<h3>7.7 Graphs → Social Media</h3>
+
+<p>
+Social media mein:
+</p>
+
+<ul>
+<li>User = Node</li>
+<li>Friend/follow relationship = Edge</li>
+</ul>
+
+<p>
+Is graph se friends-of-friends, communities aur recommendations jaise problems solve ki ja sakti hain.
+</p>
+
+
+<h3>7.8 Sequences → Time Series</h3>
+
+<p>
+Stock price, temperature, CPU usage etc. time ke according values ki sequence ho sakti hai.
+</p>
+
+<div class="example">
+
+CPU Usage:
+
+20%, 25%, 31%, 28%, 35%, ...
+
+</div>
+
+<p>
+Ye ek time-based sequence hai.
+</p>
+
+
+<h3>7.9 Series → Algorithm Analysis</h3>
+
+<p>
+Algorithm ke operations ko add karne ke liye series ka use hota hai.
+</p>
+
+<div class="example">
+
+1 + 2 + 3 + ... + n
+
+<br><br>
+
+= n(n+1)/2
+
+<br><br>
+
+≈ O(n²)
+
+</div>
+
+
+<h3>7.10 Mathematical Modelling → Computer Simulation</h3>
+
+<p>
+Real-world system ko mathematical model se represent karke computer par simulate kiya ja sakta hai.
+</p>
+
+<p>
+Examples:
+</p>
+
+<ul>
+<li>Traffic simulation</li>
+<li>Weather simulation</li>
+<li>Population growth</li>
+<li>Network traffic</li>
+<li>Financial prediction</li>
+<li>Game physics</li>
+</ul>
+
+
+<h3>7.11 Probability aur Sets</h3>
+
+<p>
+Probability mein sample space ko set ki tarah represent kar sakte hain.
+</p>
+
+<div class="example">
+
+Coin toss:
+
+S = {H,T}
+
+<br><br>
+
+Head event:
+
+A = {H}
+
+<br><br>
+
+P(A) = 1/2
+
+</div>
+
+
+<h3>7.12 Graph Theory → Cyber Security</h3>
+
+<p>
+Networks aur connections ko graph ki tarah model kiya ja sakta hai.
+</p>
+
+<p>
+Isse:
+</p>
+
+<ul>
+<li>Attack paths</li>
+<li>Network connectivity</li>
+<li>Vulnerable nodes</li>
+<li>Access relationships</li>
+</ul>
+
+<p>
+ko analyze kiya ja sakta hai.
+</p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IMPORTANT DIFFERENCES -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2>8. Important Differences</h2>
+
+<h3>Sequence vs Series</h3>
+
+<table>
+<tr>
+<th>Sequence</th>
+<th>Series</th>
+</tr>
+
+<tr>
+<td>Ordered list of numbers</td>
+<td>Sequence ke terms ka sum</td>
+</tr>
+
+<tr>
+<td>2,4,6,8</td>
+<td>2+4+6+8</td>
+</tr>
+
+<tr>
+<td>Order important</td>
+<td>Terms add hote hain</td>
+</tr>
+</table>
+
+
+<h3>Domain vs Codomain vs Range</h3>
+
+<table>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>Domain</td>
+<td>Possible inputs</td>
+</tr>
+
+<tr>
+<td>Codomain</td>
+<td>Declared possible outputs</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>Actually generated outputs</td>
+</tr>
+</table>
+
+
+<h3>Union vs Intersection</h3>
+
+<table>
+<tr>
+<th>Operation</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>A ∪ B</td>
+<td>Dono sets ke unique elements</td>
+</tr>
+
+<tr>
+<td>A ∩ B</td>
+<td>Sirf common elements</td>
+</tr>
+</table>
+
+
+<h3>Arithmetic vs Geometric Sequence</h3>
+
+<table>
+<tr>
+<th>Arithmetic</th>
+<th>Geometric</th>
+</tr>
+
+<tr>
+<td>Constant difference</td>
+<td>Constant ratio</td>
+</tr>
+
+<tr>
+<td>2,4,6,8</td>
+<td>2,4,8,16</td>
+</tr>
+
+<tr>
+<td>d = 2</td>
+<td>r = 2</td>
+</tr>
+</table>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- MASTER EXAMPLE -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2>9. Ek Combined BCA-Level Example</h2>
+
+<p>
+Ab ek scenario lete hain jisme almost saare concepts connect karenge.
+</p>
+
+<h3>Scenario: College Computer Lab</h3>
+
+<p>
+College mein 5 students hain:
+</p>
+
+<div class="formula">
+U = {A, B, C, D, E}
+</div>
+
+<p>
+Java jaane wale:
+</p>
+
+<div class="formula">
+J = {A, B, C}
+</div>
+
+<p>
+Python jaane wale:
+</p>
+
+<div class="formula">
+P = {B, C, D}
+</div>
+
+
+<h4>Question 1: Java aur Python dono kaun jaanta hai?</h4>
+
+<div class="formula">
+J ∩ P = {B,C}
+</div>
+
+
+<h4>Question 2: Kam se kam ek language kaun jaanta hai?</h4>
+
+<div class="formula">
+J ∪ P = {A,B,C,D}
+</div>
+
+
+<h4>Question 3: Sirf Java kaun jaanta hai?</h4>
+
+<div class="formula">
+J - P = {A}
+</div>
+
+
+<h4>Question 4: Students ko numbers assign karein</h4>
+
+<p>
+Suppose student number:
+</p>
+
+<div class="formula">
+f(n) = 2n + 1
+</div>
+
+<p>
+n = 1:
+</p>
+
+<div class="formula">
+f(1)=3
+</div>
+
+<p>
+n = 2:
+</p>
+
+<div class="formula">
+f(2)=5
+</div>
+
+
+<h4>Question 5: Lab computers ka network</h4>
+
+<p>
+Suppose:
+</p>
+
+<ul>
+<li>Computer A connected to B</li>
+<li>B connected to C</li>
+<li>C connected to D</li>
+</ul>
+
+<p>
+To computers vertices hain aur connections edges hain.
+</p>
+
+<p>
+Ye ek graph hai.
+</p>
+
+
+<h4>Question 6: Daily lab usage</h4>
+
+<p>
+Daily computers used:
+</p>
+
+<div class="formula">
+10, 20, 30, 40, 50, ...
+</div>
+
+<p>
+Ye Arithmetic Sequence hai.
+</p>
+
+<p>
+a = 10</p>
+<p>
+d = 10</p>
+
+
+<h4>Question 7: First 5 days ka total usage</h4>
+
+<div class="formula">
+10 + 20 + 30 + 40 + 50 = 150
+</div>
+
+<p>
+Ye Series hai.
+</p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- EXAM QUESTIONS -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2>10. Exam-Oriented Questions</h2>
+
+<h3>Short Questions</h3>
+
+<ol>
+<li>Define a set.</li>
+<li>What is an empty set?</li>
+<li>What is a subset?</li>
+<li>Define union and intersection.</li>
+<li>What is a function?</li>
+<li>Define domain and range.</li>
+<li>What is a one-to-one function?</li>
+<li>What is a graph?</li>
+<li>Define vertex and edge.</li>
+<li>What is a tree?</li>
+<li>What is mathematical modelling?</li>
+<li>Define sequence.</li>
+<li>What is an arithmetic sequence?</li>
+<li>What is a geometric sequence?</li>
+<li>Define series.</li>
+</ol>
+
+
+<h3>Long Questions</h3>
+
+<ol>
+<li>Explain different types of sets with examples.</li>
+<li>Explain union, intersection, difference and complement with examples.</li>
+<li>Explain functions, domain, codomain and range.</li>
+<li>Explain one-to-one, onto and bijective functions.</li>
+<li>Explain graph terminology with suitable examples.</li>
+<li>Explain applications of graph theory in computing.</li>
+<li>Explain mathematical modelling and its steps.</li>
+<li>Explain arithmetic and geometric sequences with formulas.</li>
+<li>Explain arithmetic and geometric series with examples.</li>
+<li>Explain applications of mathematical foundations in computer science.</li>
+</ol>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- QUICK REVISION -->
+<!-- ===================================================== -->
+
+<section id="revision">
+
+<h2>11. 🔥 Quick Revision Sheet</h2>
+
+<table>
+
+<tr>
+<th>Topic</th>
+<th>Remember This</th>
+</tr>
+
+<tr>
+<td>Set</td>
+<td>Collection of well-defined distinct objects</td>
+</tr>
+
+<tr>
+<td>Union</td>
+<td>A ∪ B → All unique elements</td>
+</tr>
+
+<tr>
+<td>Intersection</td>
+<td>A ∩ B → Common elements</td>
+</tr>
+
+<tr>
+<td>Difference</td>
+<td>A - B → A ke elements jo B mein nahi</td>
+</tr>
+
+<tr>
+<td>Complement</td>
+<td>A' = U - A</td>
+</tr>
+
+<tr>
+<td>Power Set</td>
+<td>n elements → 2ⁿ subsets</td>
+</tr>
+
+<tr>
+<td>Function</td>
+<td>Every input has exactly one output</td>
+</tr>
+
+<tr>
+<td>Domain</td>
+<td>Inputs</td>
+</tr>
+
+<tr>
+<td>Range</td>
+<td>Actual outputs</td>
+</tr>
+
+<tr>
+<td>Graph</td>
+<td>G=(V,E)</td>
+</tr>
+
+<tr>
+<td>Tree</td>
+<td>Connected graph without cycles</td>
+</tr>
+
+<tr>
+<td>Tree Edges</td>
+<td>n-1</td>
+</tr>
+
+<tr>
+<td>Arithmetic Sequence</td>
+<td>aₙ = a + (n-1)d</td>
+</tr>
+
+<tr>
+<td>Geometric Sequence</td>
+<td>aₙ = arⁿ⁻¹</td>
+</tr>
+
+<tr>
+<td>Arithmetic Series</td>
+<td>Sₙ = n/2[2a+(n-1)d]</td>
+</tr>
+
+<tr>
+<td>Infinite GP</td>
+<td>S∞ = a/(1-r), |r|&lt;1</td>
+</tr>
+
+<tr>
+<td>Modelling</td>
+<td>Real problem → Mathematical representation</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FINAL -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2>12. ❤️ Sab Concepts ko Ek Line Mein Samjho</h2>
+
+<div class="important">
+
+<p>
+<b>SET</b> batata hai ki objects ko groups mein kaise organize karein.
+</p>
+
+<p>
+<b>FUNCTION</b> batata hai ki input ko output mein kaise map karein.
+</p>
+
+<p>
+<b>GRAPH</b> batata hai ki objects ke beech relationships/connections kaise represent karein.
+</p>
+
+<p>
+<b>MATHEMATICAL MODELLING</b> real-world problem ko mathematics mein convert karta hai.
+</p>
+
+<p>
+<b>SEQUENCE</b> ordered numbers ki list hoti hai.
+</p>
+
+<p>
+<b>SERIES</b> sequence ke terms ka sum hota hai.
+</p>
+
+<p>
+<b>COMPUTING APPLICATIONS</b> in mathematical concepts ko programming, databases,
+networks, algorithms, AI, ML aur real-world systems mein use karti hain.
+</p>
+
+</div>
+
+
+<h3>🧠 BCA ke liye sabse important connection</h3>
+
+<div class="formula">
+
+Mathematics → Logic → Algorithms → Programming → Computer Science
+
+</div>
+
+<p>
+Isliye yaar mathematics ko sirf formulas ratne ki jagah
+<b>computer science ke concepts se connect karke</b> padhna.
+</p>
+
+<p>
+Agar tum concept samajh gaye ki formula <b>kyun</b> hai,
+to exam mein question thoda ghumakar bhi aaye to solve kar paoge.
+</p>
+
+</section>
+
+</div>
+
+<footer>
+    <h3>Mathematical Foundations for Computing</h3>
+    <p>BCA • Concept + Formula + Example + Computing Application</p>
+    <p>All the best! ❤️</p>
+</footer>
+
+</body>
+</html>
